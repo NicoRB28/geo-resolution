@@ -19,7 +19,7 @@ public class Location {
 	private String country;
 	
 	@Column(name = "city", nullable = false)
-	private String City;
+	private String city;
 	
 	@Column(name = "lat", nullable = false)
 	private String lat;
@@ -48,11 +48,11 @@ public class Location {
 	}
 
 	public String getCity() {
-		return City;
+		return city;
 	}
 
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
 
 	public String getLat() {
