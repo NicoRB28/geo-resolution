@@ -57,7 +57,7 @@ class GeoApplicationTests {
 		
 		Throwable exception = assertThrows(RuntimeException.class, () -> this.locationService.getLocationByPosition("-222", "-111"));
 		
-		assertEquals("Position Latitude: -222 Longitude: -111 Not Found",exception.getMessage());
+		assertEquals("No se han recuperado datos para la posición Latitud: -222, Longitud: -111",exception.getMessage());
 		
 	}
 
