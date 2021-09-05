@@ -1,0 +1,32 @@
+<ng-template #loginTitle>
+  <div nz-row [nzJustify]="'center'">
+    <h2 *ngIf="!user" nz-typography>Iniciar Sesi&oacute;n</h2>
+    <h5 *ngIf="user" nz-typography>Sesión previamente iniciada.</h5>
+  </div>
+</ng-template>
+<div class="margin-top-10" nz-row [nzJustify]="'center'">
+  <div nz-col>
+    <nz-card style="width:300px;" [nzTitle]="loginTitle">
+      <a *ngIf="user" [routerLink]="['/home']">Ir al home</a>
+      <form *ngIf="!user" nz-form [formGroup]="form" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Ingrese un nombre de usuario.">
+            <nz-input-group >
+              <input type="text" nz-input formControlName="user" placeholder="Usuario" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Ingrese una contraseña.">
+            <nz-input-group >
+              <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button [disabled]="!form.valid" nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+          Iniciar Sesi&oacute;n
+        </button>
+      </form>
+    </nz-card>
+  </div>
+</div>

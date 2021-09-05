@@ -38,22 +38,28 @@ public class AuthServiceImpl implements AuthService {
 				token = token.substring(prefix.length()).trim();
 			}
 			
-			Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+			Jws<Claims> jws = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
 			
 			return true;			
 		
 		} catch ( ExpiredJwtException e) {
 			return false;
 		}catch(JwtException e) {
+			e.printStackTrace();
 			return false;
 		}
 		
+
 	}
 	
 	@Override
 	public boolean isLoginSuccess(String username, String password) {
-		User user = this.userService.getUserByUserName(username);
-		return (user.getPassword().equals(password));
+		try {
+			User user = this.userService.getUserByUserName(username);
+			return (user.getPassword().equals(password));			
+		} catch (RuntimeException e) {
+			return false;
+		}
 	}
 
 	private Date getExpiration(Date date, int seconds) {

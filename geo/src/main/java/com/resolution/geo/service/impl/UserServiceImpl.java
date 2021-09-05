@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User getUserByUserName(String username) {
-		return this.userRepo.findByUsername(username).orElseThrow(() -> new RuntimeException("Username: "+username+" Not Found"));
+		return this.userRepo.findByUsername(username).orElseThrow(() -> new RuntimeException("Usuario: "+username+" no encontrado"));
 	}
 	
 	

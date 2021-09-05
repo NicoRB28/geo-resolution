@@ -19,14 +19,17 @@ import org.springframework.http.HttpStatus;
 
 import com.resolution.geo.service.AuthService;
 
-@WebFilter(filterName = "jwt-auth-filter", urlPatterns = "*")
 public class JWTAuthenticationFilter implements Filter {
 	
 	private FilterConfig filterConfig;
 	
-	@Autowired
 	private AuthService authService;
 	
+	public JWTAuthenticationFilter(AuthService authService) {
+		super();
+		this.authService = authService;
+	}
+
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.filterConfig = filterConfig;
@@ -37,7 +40,7 @@ public class JWTAuthenticationFilter implements Filter {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
 		
-		if("/api/login/".equals(req.getRequestURI()) && HttpMethod.OPTIONS.matches(req.getMethod())){
+		if(req.getRequestURI().contains("/api/login/") || HttpMethod.OPTIONS.matches(req.getMethod())){
 			
 			chain.doFilter(request, response);
 			return;
