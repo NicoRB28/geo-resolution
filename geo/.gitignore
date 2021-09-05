@@ -1,5 +1,5 @@
 HELP.md
-target/
+#target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -12,6 +12,8 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+*.log
 
 ### Eclipse ###
 .metadata
@@ -46,7 +48,7 @@ build/
 .vscode/
 
 ### Maven ###
-.mvn/
-mvnw
-mvnw.cmd
+#.mvn/
+#mvnw
+#mvnw.cmd
 

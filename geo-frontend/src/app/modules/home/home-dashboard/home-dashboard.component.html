@@ -1,0 +1,13 @@
+<div  class="margin-top-2" nz-row [nzJustify]="'center'">
+  <h4 nz-typography>
+    Buscador de coordenadas, ingrese una latitud y una longitud para recuperar datos asociados a dicha posici&oacute;n.
+  </h4>
+</div>
+<div class="margin-top-2" nz-row [nzJustify]="'center'">
+  <app-home-form (onSubmit)="sendRequest($event)"></app-home-form>
+</div>
+<div class="margin-top-5" nz-row nzSpan="24" [nzJustify]="'center'">
+  <div nz-col nzSpan="20">
+    <app-home-response *ngIf="location" [location]="location"></app-home-response>
+  </div>
+</div>

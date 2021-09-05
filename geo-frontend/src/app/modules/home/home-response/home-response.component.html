@@ -1,0 +1,18 @@
+<nz-table #table nzTemplateMode [nzBordered]="true">
+  <thead>
+    <tr>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Pais</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ location.lanInput }}</td>
+      <td>{{ location.lngInput }}</td>
+      <td>{{ location.data.country }}</td>
+      <td>{{ location.data.city }}</td>
+    </tr>
+  </tbody>
+</nz-table>
