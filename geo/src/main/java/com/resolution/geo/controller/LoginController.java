@@ -22,7 +22,7 @@ public class LoginController {
 	 @Autowired
 	 private AuthService authService;
 	 
-	 private final int EXPIRATION_IN_SEC = 100;
+	 private final int EXPIRATION_IN_SEC = 10000;
 	 
 	 @PostMapping("/")
 	 public ResponseEntity<?> authenticate(@RequestBody LoginRequestDTO request) {
@@ -30,7 +30,7 @@ public class LoginController {
 			 String token = authService.generateToken(request.getUsername(), EXPIRATION_IN_SEC);
 			 return ResponseEntity.ok(new CredentialDTO(token,EXPIRATION_IN_SEC, request.getUsername()));
 		 }else {
-			 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User or password incorrect, please try again.");
+			 return new ResponseEntity<String>("Usuario y/o contraseña incorrectos.",HttpStatus.UNAUTHORIZED);
 		 }
 	 }
 	 

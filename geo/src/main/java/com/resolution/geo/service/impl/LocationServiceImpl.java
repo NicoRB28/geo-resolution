@@ -15,7 +15,7 @@ public class LocationServiceImpl implements LocationService {
 	
 	@Override
 	public Location getLocationByPosition(String lat, String lng) {
-		return this.locationRepo.findByLatAndLng(lat, lng).orElseThrow(() -> new RuntimeException("Position Latitude: "+lat+" Longitude: "+ lng +" Not Found"));
+		return this.locationRepo.findByLatAndLng(lat, lng).orElseThrow(() -> new RuntimeException("No se han recuperado datos para la posición Latitud: "+lat+", Longitud: "+ lng));
 	}
 
 }
