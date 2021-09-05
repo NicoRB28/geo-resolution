@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginRequest } from 'src/app/model/loginRequest';
+import { User } from 'src/app/model/user';
 import { LoginSandbox } from '../login.sandbox';
 
 @Component({
@@ -11,6 +12,7 @@ import { LoginSandbox } from '../login.sandbox';
 export class LoginFormComponent implements OnInit {
 
   form:FormGroup;
+  user:User;
 
   constructor(private fb:FormBuilder,
               private sandbox: LoginSandbox) {
@@ -21,6 +23,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = this.sandbox.userValue();
   }
 
   submitForm(){

@@ -1,1 +1,21 @@
-<p>home-form works!</p>
+<form nz-form [nzLayout]="'inline'" [formGroup]="form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Por favor ingrese la latitud.">
+      <nz-input-group>
+        <input formControlName="lat" nz-input placeholder="Latitud"/>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Por favor ingrese la longitud">
+      <nz-input-group>
+        <input formControlName="lng" nz-input placeholder="Longitud"/>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" [disabled]="!form.valid">Consultar</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

@@ -10,6 +10,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
     NzGridModule,
     NzIconModule,
     NzMessageModule,
+    NzTableModule,
   ],
   exports:[
     //ng-zorro modules
@@ -38,6 +40,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
     NzGridModule,
     NzIconModule,
     NzMessageModule,
+    NzTableModule,
   ]
 })
 export class ShareModule { }
