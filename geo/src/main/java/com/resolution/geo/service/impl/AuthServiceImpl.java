@@ -31,6 +31,7 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	@Override
+	@SuppressWarnings(value = "unused")
 	public boolean validateToken(String token) {
 		String prefix = "Bearer";
 		try {
@@ -45,7 +46,6 @@ public class AuthServiceImpl implements AuthService {
 		} catch ( ExpiredJwtException e) {
 			return false;
 		}catch(JwtException e) {
-			e.printStackTrace();
 			return false;
 		}
 		
