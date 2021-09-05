@@ -1,5 +1,5 @@
 HELP.md
-target/
+#target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -48,7 +48,7 @@ build/
 .vscode/
 
 ### Maven ###
-.mvn/
-mvnw
-mvnw.cmd
+#.mvn/
+#mvnw
+#mvnw.cmd
 
