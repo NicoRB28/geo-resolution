@@ -23,7 +23,7 @@ public class User {
 	@Column(name= "password", nullable = false)
 	@ColumnTransformer(
 			read = "pgp_sym_decrypt(password,'secretKey')",
-			write = "pqp_sym_encrypt(?,'secretKey')"
+			write = "pgp_sym_encrypt(?,'secretKey')"
 	)
 	private String password;
 	
