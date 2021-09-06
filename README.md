@@ -7,7 +7,7 @@ Para ejecutar la aplicación seguir los siguientes pasos:
 - GEO_PASS_DB: contenido el password con el cual acceder a la base de datos
 - Ejecutar el script data.sql para poder generar la base de datos con datos de prueba,
 para esto el comando utilizado fue:
-$psql -U <<username>> -a -f <<path/data.sql>>
+$psql -U username -a -f <<path/data.sql>>
 dicho archivo generará la base de datos "geo", sus correspondientes tablas (location y user_app)
 insertando datos de prueba.
 
